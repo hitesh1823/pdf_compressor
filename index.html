@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompressPix | Smart Image Compression</title>
+    <meta name="description" content="Reduce image file sizes without losing quality. Free online tool for JPG, PNG, and WebP compression.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">Compress<span>Pix</span></div>
+            <nav class="nav">
+                <a href="#">Home</a>
+                <a href="#">How It Works</a>
+                <a href="#">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Smart Image Compression</h1>
+                <p class="subtitle">Reduce file sizes without noticeable quality loss. Fast, secure, and completely free.</p>
+                
+                <div class="upload-container" id="uploadContainer">
+                    <div class="drop-area" id="dropArea">
+                        <img src="upload-icon.svg" alt="Upload" class="upload-icon">
+                        <p>Drag & drop images here</p>
+                        <span class="or">or</span>
+                        <button class="btn btn-primary" id="selectFilesBtn">Select Files</button>
+                        <input type="file" id="fileInput" accept="image/jpeg, image/png, image/webp" multiple style="display: none;">
+                        <p class="formats">Supports: JPG, PNG, WebP</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="compression-interface" id="compressionInterface" style="display: none;">
+            <div class="container">
+                <div class="compression-wrapper">
+                    <div class="original-image">
+                        <h3>Original</h3>
+                        <div class="image-preview" id="originalPreview"></div>
+                        <div class="file-info" id="originalInfo"></div>
+                    </div>
+                    
+                    <div class="compression-controls">
+                        <div class="settings-panel">
+                            <div class="setting">
+                                <label for="quality">Quality: <span id="qualityValue">80</span>%</label>
+                                <input type="range" id="quality" min="10" max="100" value="80">
+                            </div>
+                            
+                            <div class="setting">
+                                <label for="format">Output Format:</label>
+                                <select id="format">
+                                    <option value="auto">Same as original</option>
+                                    <option value="jpeg">JPEG</option>
+                                    <option value="png">PNG</option>
+                                    <option value="webp">WebP</option>
+                                </select>
+                            </div>
+                            
+                            <button class="btn btn-compress" id="compressBtn">Compress Now</button>
+                        </div>
+                        
+                        <div class="progress-container" id="progressContainer" style="display: none;">
+                            <div class="progress-bar">
+                                <div class="progress" id="progressBar"></div>
+                            </div>
+                            <span class="progress-text" id="progressText">Compressing...</span>
+                        </div>
+                    </div>
+                    
+                    <div class="compressed-image">
+                        <h3>Compressed</h3>
+                        <div class="image-preview" id="compressedPreview"></div>
+                        <div class="file-info" id="compressedInfo"></div>
+                        <button class="btn btn-download" id="downloadBtn" style="display: none;">Download</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="features">
+            <div class="container">
+                <h2>Why Choose CompressPix?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Lightning Fast</h3>
+                        <p>Our optimized algorithms process images in seconds, even for large files.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Privacy Focused</h3>
+                        <p>All processing happens in your browser. We never upload your images to our servers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Works perfectly on all devices, from desktop to smartphone.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">CompressPix</div>
+                <div class="footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="copyright">© 2023 CompressPix. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
